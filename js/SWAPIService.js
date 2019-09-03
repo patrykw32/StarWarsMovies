@@ -8,7 +8,6 @@ async function getFilms(){
         movies.push(...response.results);
         url = response.next;
     }
-    console.log(movies);
     return movies;
 }
 // Get single movie
