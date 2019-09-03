@@ -6,7 +6,9 @@ async function getFilms(){
     while(url !== null){
         const response = await getResponse(url);
         movies.push(...response.results);
+        url = response.next;
     }
+    console.log(movies);
     return movies;
 }
 // Get single movie
@@ -14,5 +16,4 @@ async function getFilm(url){
     let movie = await getResponse(url);
     return movie; 
 }
-
 
